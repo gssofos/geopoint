@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<title>GeoSolution Coordinates Transform</title>
+
+	<script type="text/javascript" src="geopoint.js" ></script>
+	<script type="text/javascript" src="page.js"></script>
+
+</head>
+
+
+<body onload="pos();">
+<div id="topcontainer"  style="top:30px;position: absolute;" >
+	<form id="form">
+		<font size="2" style="top:12px;position: absolute;left:10px;width:100px" face="Times" color="#000000">Latitude (φ)</font>   
+		<div  style="top:10px;position: absolute;left:120px;">
+			<input id="f"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flchanged();">
+		</div>
+		<div  style="top:35px;position: absolute;left:120px;">
+			<input id="fo"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+		<div  style="top:35px;position: absolute;left:170px;">
+			<input id="fm"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+		<div  style="top:35px;position: absolute;left:220px;">
+			<input id="fs"  type="text" name="subcategory" STYLE="width:60;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+		<font size="2" style="top:72px;position: absolute;left:10px;width:100px" face="Times" color="#000000">Longitude (λ)</font>   
+		<div  style="top:70px;position: absolute;left:120px;">
+			<input id="l"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flchanged();">
+		</div>
+		<div  style="top:95px;position: absolute;left:120px;">
+			<input id="lo"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+		<div  style="top:95px;position: absolute;left:170px;">
+			<input id="lm"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+		<div  style="top:95px;position: absolute;left:220px;">
+			<input id="ls"  type="text" name="subcategory" STYLE="width:60;font:normal 12px Arial, Helvetica, sans-serif;"  onkeyup="flmschanged();">
+		</div>
+
+
+
+		<font size="2" style="top:12px;position: absolute;left:380px;width:100px" face="Times" color="#000000">ΕΓΣΑ 87' - Χ</font>   
+		<div  style="top:10px;position: absolute;left:500px;">
+			<input id="egx"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="egsachanged();">
+		</div>
+		<font size="2" style="top:42px;position: absolute;left:380px;width:100px" face="Times" color="#000000">ΕΓΣΑ 87' - Υ</font>   
+		<div  style="top:40px;position: absolute;left:500px;">
+			<input id="egy"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="egsachanged();">
+		</div>
+
+
+		<font size="2" style="top:162px;position: absolute;left:10px;width:120px" face="Times" color="#000000">ED_50 - UTM - X</font>   
+		<div  style="top:160px;position: absolute;left:120px;">
+			<input id="edutx"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edutchanged();">
+		</div>
+		<font size="2" style="top:192px;position: absolute;left:10px;width:120px" face="Times" color="#000000">ED_50 - UTM - Y</font>   
+		<div  style="top:190px;position: absolute;left:120px;">
+			<input id="eduty"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edutchanged();">
+		</div>
+		<font size="2" style="top:222px;position: absolute;left:10px;width:100px" face="Times" color="#000000">UTM - Zone</font>   
+		<div  style="top:220px;position: absolute;left:120px;">
+			<input id="utzz1"  type="text" name="subcategory" STYLE="width:40;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edutchanged();">
+		</div>
+
+
+
+		<font size="2" style="top:292px;position: absolute;left:10px;width:100px" face="Times" color="#000000">ED_50 - MGRS</font>   
+		<div  style="top:290px;position: absolute;left:120px;">
+			<input id="edzone"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edmgrschanged();">
+		</div>
+		<div  style="top:290px;position: absolute;left:160px;">
+			<input id="edsquare"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edmgrschanged();">
+		</div>
+		<div  style="top:290px;position: absolute;left:200px;">
+			<input id="edx"  type="text" name="subcategory" STYLE="width:80;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edmgrschanged();">
+		</div>
+		<div  style="top:320px;position: absolute;left:200px;">
+			<input id="edy"  type="text" name="subcategory" STYLE="width:80;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="edmgrschanged();">
+		</div>
+
+
+		<font size="2" style="top:162px;position: absolute;left:380px;width:120px" face="Times" color="#000000">WGS 84 - UTM - X</font>   
+		<div  style="top:160px;position: absolute;left:500px;">
+			<input id="wutx"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wutchanged();">
+		</div>
+		<font size="2" style="top:192px;position: absolute;left:380px;width:120px" face="Times" color="#000000">WGS 84 - UTM - Y</font>   
+		<div  style="top:190px;position: absolute;left:500px;">
+			<input id="wuty"  type="text" name="subcategory" STYLE="width:160;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wutchanged();">
+		</div>
+		<font size="2" style="top:222px;position: absolute;left:380px;width:100px" face="Times" color="#000000">UTM - Zone</font>   
+		<div  style="top:220px;position: absolute;left:500px;">
+			<input id="utzz2"  type="text" name="subcategory" STYLE="width:40;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wutchanged();">
+		</div>
+
+
+		<font size="2" style="top:292px;position: absolute;left:380px;width:100px" face="Times" color="#000000">WGS 84 - MGRS</font>   
+		<div  style="top:290px;position: absolute;left:500px;">
+			<input id="wzone"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wmgrschanged();">
+		</div>
+		<div  style="top:290px;position: absolute;left:540px;">
+			<input id="wsquare"  type="text" name="subcategory" STYLE="width:30;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wmgrschanged();">
+		</div>
+		<div  style="top:290px;position: absolute;left:580px;">
+			<input id="wx"  type="text" name="subcategory" STYLE="width:80;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wmgrschanged();">
+		</div>
+		<div  style="top:320px;position: absolute;left:580px;">
+			<input id="wy"  type="text" name="subcategory" STYLE="width:80;font:normal 12px Arial, Helvetica, sans-serif;" onkeyup="wmgrschanged();">
+		</div>
+	</form>
+</div>	
+</body>
+
+</html>
